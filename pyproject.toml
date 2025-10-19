@@ -1,6 +1,6 @@
 [project]
 name = "dagster-dify"
-version = "0.27.15.0"
+version = "0.27.15.1"
 description = "A dagster plugin for the Dify"
 readme = "README.md"
 authors = [
