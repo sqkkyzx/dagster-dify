@@ -3,4 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="uv (dagster-dify)" />
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="uv (dagster-dify)" project-jdk-type="Python SDK" />
 </project>

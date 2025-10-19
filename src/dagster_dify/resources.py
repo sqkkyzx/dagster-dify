@@ -1,6 +1,5 @@
 import io
 import json
-import logging
 import os
 from typing import List, Dict, Literal, Union, Optional
 
@@ -134,7 +133,8 @@ class DifyResource(ConfigurableResource):
             file_name: Optional[str],
             file_path: Optional[str] = None,
             file_bytes: Optional[bytes] = None,
-            user: str = "dagster"
+            user: str = "dagster",
+            timeout: int = 300000
     ):
         if not file_name:
             file_name = os.path.basename(file_path)
@@ -146,6 +146,7 @@ class DifyResource(ConfigurableResource):
                     files={"file": (file_name, file)},
                     json={"user": user},
                     headers={"Authorization": f"Bearer {token}"},
+                    timeout=timeout
                 ).json()
                 return res
         elif file_path is not None:
@@ -155,6 +156,7 @@ class DifyResource(ConfigurableResource):
                     files={"file": (file_name, file)},
                     json={"user": user},
                     headers={"Authorization": f"Bearer {token}"},
+                    timeout=timeout
                 ).json()
                 return res
         else:
